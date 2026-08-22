@@ -34,3 +34,6 @@ S:\Este Equipo\Documentos\C#\Booking\Booking.Api\obj\Debug\net8.0\refint\Booking
 S:\Este Equipo\Documentos\C#\Booking\Booking.Api\obj\Debug\net8.0\Booking.Api.pdb
 S:\Este Equipo\Documentos\C#\Booking\Booking.Api\obj\Debug\net8.0\Booking.Api.genruntimeconfig.cache
 S:\Este Equipo\Documentos\C#\Booking\Booking.Api\obj\Debug\net8.0\ref\Booking.Api.dll
+S:\Este Equipo\Documentos\C#\Booking\Booking.Api\bin\Debug\net8.0\Booking.Domain.dll
+S:\Este Equipo\Documentos\C#\Booking\Booking.Api\bin\Debug\net8.0\Booking.Domain.pdb
+S:\Este Equipo\Documentos\C#\Booking\Booking.Api\obj\Debug\net8.0\Booking.Api.sourcelink.json

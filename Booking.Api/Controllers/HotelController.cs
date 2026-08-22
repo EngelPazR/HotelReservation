@@ -17,7 +17,8 @@ namespace Booking.Api.Controllers
         [HttpGet]
         public IActionResult GetRooms()
         {
-            return Ok("Hello from hotel controller");
+            var hotels = GetHotels();
+            return Ok(hotels);
         }
 
         private List<Hotel> GetHotels()
@@ -28,9 +29,18 @@ namespace Booking.Api.Controllers
                 new Hotel {
                 Id = 1,
                 Name = "Holiday Inn",
-                Stars = 3, 
+                Stars = 5, 
                 Country = "Nicaragua",
-                City = "Fajardo"
+                City = "Managua"
+                }, 
+
+                new Hotel
+                {
+                    Id = 2, 
+                    Name = "La perla",
+                    Stars = 5,
+                    Country = "Leon",
+                    City = "Leon"
                 }
 
             };

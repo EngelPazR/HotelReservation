@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "Booking.Api/1.0.0": {
         "dependencies": {
+          "Booking.Domain": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "8.0.19",
           "Swashbuckle.AspNetCore": "10.2.3"
         },
@@ -76,7 +77,15 @@
           }
         }
       },
-      "System.Text.Json/8.0.5": {}
+      "System.Text.Json/8.0.5": {},
+      "Booking.Domain/1.0.0": {
+        "runtime": {
+          "Booking.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
     }
   },
   "libraries": {
@@ -140,6 +149,11 @@
       "sha512": "sha512-0f1B50Ss7rqxXiaBJyzUu9bWFOO2/zSlifZ/UNMdiIpDYe4cY4LQQicP4nirK1OS31I43rn062UIJ1Q9bpmHpg==",
       "path": "system.text.json/8.0.5",
       "hashPath": "system.text.json.8.0.5.nupkg.sha512"
+    },
+    "Booking.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

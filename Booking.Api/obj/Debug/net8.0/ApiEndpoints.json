@@ -2,7 +2,7 @@
   {
     "ContainingType": "Booking.Api.Controllers.HotelController",
     "Method": "GetRooms",
-    "RelativePath": "Hotel",
+    "RelativePath": "api/Hotel",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
