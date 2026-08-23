@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+
 using System.Collections.Generic;
 using Booking.Domain.Models;
 using System.Security.Cryptography.X509Certificates;
@@ -9,15 +10,15 @@ namespace Booking.Api.Controllers
     [Route ("api/[controller]")]
     public class HotelController : Controller
     {
-
-        public HotelController()
+        private readonly DataSource _datasource;
+        public HotelController(DataSource dataSource)
         {
-
+            _datasource = dataSource;
         }
         [HttpGet]
         public IActionResult GetAllHotels()
         {
-            var hotels = GetHotels();
+            var hotels = _datasource.Hotels;
             return Ok(hotels);
         }
         [HttpGet]
@@ -25,7 +26,7 @@ namespace Booking.Api.Controllers
       
         public IActionResult GetHotelByID(int id)
         {
-            var hotels = GetHotels();
+            var hotels = _datasource.Hotels;
             var hotel = hotels.FirstOrDefault(h => h.Id == id);
 
             if (hotel == null)
@@ -40,7 +41,7 @@ namespace Booking.Api.Controllers
         public IActionResult CreateHotel([FromBody] Hotel hotel)
 
         {
-            var hotels = GetHotels();
+            var hotels = _datasource.Hotels;
             hotels.Add(hotel);
             return CreatedAtAction(nameof(GetHotelByID), new { id = hotel.Id }, hotel);
         }
@@ -48,36 +49,29 @@ namespace Booking.Api.Controllers
         [HttpPut]
         public IActionResult UpdateHotel([FromBody] Hotel update, int id)
         {
-            var hotels = GetHotels();
+            var hotels = _datasource.Hotels;
             var old = hotels.FirstOrDefault(h => h.Id == id);
             hotels.Remove(old);
             hotels.Add(update);
+
+            if (old == null)
+                return NotFound("No se encontraton Hoteles");
+
             return NoContent();
 
+          
+
+            
         }
-        private List<Hotel> GetHotels()
+
+        [HttpDelete]
+        public IActionResult DeleteHotel(int id)
         {
-            return new List<Hotel>
-            {
-                             
-                new Hotel {
-                Id = 1,
-                Name = "Holiday Inn",
-                Stars = 5, 
-                Country = "Nicaragua",
-                City = "Managua"
-                }, 
-
-                new Hotel
-                {
-                    Id = 2, 
-                    Name = "La perla",
-                    Stars = 5,
-                    Country = "Leon",
-                    City = "Leon"
-                }
-
-            };
+            var hotels = _datasource.Hotels;
+            var toDelete = hotels.FirstOrDefault(h => h.Id == id);
+            hotels.Remove(toDelete);
+            return NoContent();
         }
+       
     }
 }
