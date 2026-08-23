@@ -15,12 +15,46 @@ namespace Booking.Api.Controllers
 
         }
         [HttpGet]
-        public IActionResult GetRooms()
+        public IActionResult GetAllHotels()
         {
             var hotels = GetHotels();
             return Ok(hotels);
         }
+        [HttpGet]
+        [Route("{id}")]
+      
+        public IActionResult GetHotelByID(int id)
+        {
+            var hotels = GetHotels();
+            var hotel = hotels.FirstOrDefault(h => h.Id == id);
 
+            if (hotel == null)
+                return NotFound();
+
+            return Ok(hotel);
+                     
+        }
+
+        [HttpPost]
+
+        public IActionResult CreateHotel([FromBody] Hotel hotel)
+
+        {
+            var hotels = GetHotels();
+            hotels.Add(hotel);
+            return CreatedAtAction(nameof(GetHotelByID), new { id = hotel.Id }, hotel);
+        }
+
+        [HttpPut]
+        public IActionResult UpdateHotel([FromBody] Hotel update, int id)
+        {
+            var hotels = GetHotels();
+            var old = hotels.FirstOrDefault(h => h.Id == id);
+            hotels.Remove(old);
+            hotels.Add(update);
+            return NoContent();
+
+        }
         private List<Hotel> GetHotels()
         {
             return new List<Hotel>
