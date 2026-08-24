@@ -1,0 +1,12 @@
+S:\Este Equipo\Documentos\C#\Booking\Booking.Domain\bin\Debug\net8.0\Booking.Domain.deps.json
+S:\Este Equipo\Documentos\C#\Booking\Booking.Domain\bin\Debug\net8.0\Booking.Domain.dll
+S:\Este Equipo\Documentos\C#\Booking\Booking.Domain\bin\Debug\net8.0\Booking.Domain.pdb
+S:\Este Equipo\Documentos\C#\Booking\Booking.Domain\obj\Debug\net8.0\Booking.Domain.GeneratedMSBuildEditorConfig.editorconfig
+S:\Este Equipo\Documentos\C#\Booking\Booking.Domain\obj\Debug\net8.0\Booking.Domain.AssemblyInfoInputs.cache
+S:\Este Equipo\Documentos\C#\Booking\Booking.Domain\obj\Debug\net8.0\Booking.Domain.AssemblyInfo.cs
+S:\Este Equipo\Documentos\C#\Booking\Booking.Domain\obj\Debug\net8.0\Booking.Domain.csproj.CoreCompileInputs.cache
+S:\Este Equipo\Documentos\C#\Booking\Booking.Domain\obj\Debug\net8.0\Booking.Domain.sourcelink.json
+S:\Este Equipo\Documentos\C#\Booking\Booking.Domain\obj\Debug\net8.0\Booking.Domain.dll
+S:\Este Equipo\Documentos\C#\Booking\Booking.Domain\obj\Debug\net8.0\refint\Booking.Domain.dll
+S:\Este Equipo\Documentos\C#\Booking\Booking.Domain\obj\Debug\net8.0\Booking.Domain.pdb
+S:\Este Equipo\Documentos\C#\Booking\Booking.Domain\obj\Debug\net8.0\ref\Booking.Domain.dll
