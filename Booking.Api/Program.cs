@@ -9,8 +9,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<DataSource>();
-
 var app = builder.Build();
+
+
+app.Use(async (context, next) => { context.Request.Headers.Add("my-middle-header", DateTime.Now.ToString());
+
+
+await next();});
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -20,6 +27,7 @@ app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
+app.UseRouting();
 
 app.UseAuthorization();
 

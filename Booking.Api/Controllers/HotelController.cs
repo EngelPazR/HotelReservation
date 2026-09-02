@@ -13,15 +13,18 @@ namespace Booking.Api.Controllers
     {
     
         private readonly ILogger<HotelController> _logger;
-        public HotelController(ILogger<HotelController> logger)
+        private readonly HttpContext _http;
+        public HotelController(ILogger<HotelController> logger, IHttpContextAccessor httpContextAccessor)
         {
        
             _logger = logger;
+            _http = httpContextAccessor.HttpContext;
         }
         [HttpGet]
         public IActionResult GetAllHotels()
         {
-            return Ok();
+            HttpContext.Request.Headers.TryGetValue("my-middleware-header", out var headerDate);
+            return Ok(headerDate);
         }
         [HttpGet]
         [Route("{id}")]
