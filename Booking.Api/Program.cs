@@ -1,4 +1,8 @@
 using Booking.Api;
+using Booking.Api.MyMiddleware;
+using CwBooking.Dal;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +13,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<DataSource>();
+
+var cs = builder.Configuration.GetConnectionString("Default");
+builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(cs));
 var app = builder.Build();
+
+
 
 
 app.Use(async (context, next) => { context.Request.Headers.Add("my-middle-header", DateTime.Now.ToString());
@@ -30,6 +39,7 @@ app.UseHttpsRedirection();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseDateTimeMiddleware();
 
 app.MapControllers();
 

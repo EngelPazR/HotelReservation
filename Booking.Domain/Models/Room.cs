@@ -12,7 +12,7 @@ namespace Booking.Domain.Models
 
         public int RoomNumber { get; set; }
 
-        public double surface {  get; set; }
+        public double Surface {  get; set; }
 
         public bool NeedsRepair { get; set; }
 

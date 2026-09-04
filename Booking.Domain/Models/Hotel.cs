@@ -24,6 +24,8 @@ namespace Booking.Domain.Models
         public string City {  get; set; }
 
         public string Country { get; set; } = "Unknown";
+        public string Rooms { get; set; }
+        public string Description { get; set; }
 
     }
 }
